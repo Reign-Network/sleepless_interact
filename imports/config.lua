@@ -10,7 +10,7 @@ config.color = vec4(28, 126, 214, 200)
 
 config.defaultIndicatorSprite = { dict = 'shared', txt = 'emptydot_32' }
 
-config.useShowKeyBind = true
+config.useShowKeyBind = false
 
 config.defaultShowKeyBind = 'LMENU'
 
