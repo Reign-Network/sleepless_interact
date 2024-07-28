@@ -22,8 +22,9 @@ server_scripts {
 }
 
 client_script {
+    '@qbx_core/modules/playerdata.lua',
 	'bridge/init.lua',
-	"init.lua",
+	'init.lua',
 	'exports/*.lua',
 	'client/*.lua',
 }

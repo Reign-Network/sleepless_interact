@@ -1,4 +1,3 @@
-local QBCore = exports['qb-core']:GetCoreObject()
 local Groups = {}
 local Player = {}
 local utils = require 'imports.utils'
@@ -41,7 +40,7 @@ RegisterNetEvent('QBCore:Player:SetPlayerData', function(playerData)
 end)
 
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
-    local PlayerData = QBCore.Functions.GetPlayerData()
+    local PlayerData = QBX.PlayerData
 
     Groups = {
         [PlayerData.job.name] = PlayerData.job.grade.level,
@@ -67,7 +66,7 @@ end)
 
 AddEventHandler('onResourceStart', function(resource)
     if resource == GetCurrentResourceName() then
-        local PlayerData = QBCore.Functions.GetPlayerData()
+        local PlayerData = QBX.PlayerData
 
         Groups = {
             [PlayerData.job.name] = PlayerData.job.grade.level,
@@ -79,7 +78,7 @@ AddEventHandler('onResourceStart', function(resource)
         }
 
         if not ox_inv then setPlayerItems(PlayerData) end
-        
+
         TriggerEvent('sleepless_interact:updateGroups', Groups)
         BuilderLoop()
     end
